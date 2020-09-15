@@ -43,3 +43,5 @@ usuario: user1
 password: User1 
 ```
 4. Será redirigido, con la sesión ya iniciada, a la página del casino
+
+#### Ejemplo en [vídeo](https://youtu.be/3UWYXxYCQew)
