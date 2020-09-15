@@ -9,11 +9,11 @@
 		<version>2.1.8.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.openwebinars.rest</groupId>
-	<artifactId>31_OAuth2Cliente</artifactId>
+	<groupId>com.casino.rest</groupId>
+	<artifactId>casino</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>31_OAuth2Cliente</name>
-	<description>Ejemplo de cliente para nuestra aplicación OAuth2.0 </description>
+	<name>casino</name>
+	<description>Ejemplo de cliente para nuestra aplicación OAuth2.0</description>
 
 	<properties>
 		<java.version>1.8</java.version>
