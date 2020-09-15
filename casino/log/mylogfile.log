@@ -1,0 +1,1125 @@
+2020-09-15 16:33:05.642  INFO 14568 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 14568 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 16:33:05.648  INFO 14568 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 16:33:06.556  INFO 14568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 16:33:06.646  INFO 14568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81ms. Found 4 repository interfaces.
+2020-09-15 16:33:07.020  INFO 14568 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$92bf1a95] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 16:33:07.271  INFO 14568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 16:33:07.292  INFO 14568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 16:33:07.293  INFO 14568 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 16:33:07.411  INFO 14568 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 16:33:07.578  INFO 14568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 16:33:08.642 ERROR 14568 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.get(DbException.java:194) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:193) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:173) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.getPageStore(Database.java:2739) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.open(Database.java:769) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.openDatabase(Database.java:319) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.<init>(Database.java:313) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:201) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:161) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:31) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.Driver.connect(Driver.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:319) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:356) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DatabaseLookup.getDatabase(DatabaseLookup.java:73) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.determineDatabase(JpaProperties.java:142) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.jpaVendorAdapter(JpaBaseConfiguration.java:113) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$b195dd04.CGLIB$jpaVendorAdapter$6(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$b195dd04$$FastClassBySpringCGLIB$$c701a61e.invoke(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$b195dd04.jpaVendorAdapter(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_261]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_261]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_261]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_261]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.casino.rest.Application.main(Application.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/dholb/OneDrive/Escritorio/zitro/workspace/casino/db/basededatos.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.FileStore.open(FileStore.java:172) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162) ~[h2-1.4.199.jar:1.4.199]
+	... 87 common frames omitted
+
+2020-09-15 16:33:08.647  WARN 14568 --- [main] o.s.b.a.orm.jpa.DatabaseLookup           : Unable to determine jdbc url from datasource
+
+org.springframework.jdbc.support.MetaDataAccessException: Could not get Connection for extracting meta-data; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:328) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:356) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DatabaseLookup.getDatabase(DatabaseLookup.java:73) ~[spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.determineDatabase(JpaProperties.java:142) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.jpaVendorAdapter(JpaBaseConfiguration.java:113) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$b195dd04.CGLIB$jpaVendorAdapter$6(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$b195dd04$$FastClassBySpringCGLIB$$c701a61e.invoke(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$b195dd04.jpaVendorAdapter(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_261]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_261]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_261]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_261]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.casino.rest.Application.main(Application.java:10) ~[classes/:na]
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:319) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 62 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.get(DbException.java:194) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:193) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:173) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.getPageStore(Database.java:2739) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.open(Database.java:769) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.openDatabase(Database.java:319) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.<init>(Database.java:313) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:201) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:161) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:31) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.Driver.connect(Driver.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 63 common frames omitted
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/dholb/OneDrive/Escritorio/zitro/workspace/casino/db/basededatos.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.FileStore.open(FileStore.java:172) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162) ~[h2-1.4.199.jar:1.4.199]
+	... 87 common frames omitted
+
+2020-09-15 16:33:09.076  INFO 14568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 16:33:10.091 ERROR 14568 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.get(DbException.java:194) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:193) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:173) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.getPageStore(Database.java:2739) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.open(Database.java:769) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.openDatabase(Database.java:319) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.<init>(Database.java:313) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:201) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:161) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:31) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.Driver.connect(Driver.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:94) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:179) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:119) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.casino.rest.Application.main(Application.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/dholb/OneDrive/Escritorio/zitro/workspace/casino/db/basededatos.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.FileStore.open(FileStore.java:172) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162) ~[h2-1.4.199.jar:1.4.199]
+	... 60 common frames omitted
+
+2020-09-15 16:33:10.097  WARN 14568 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2020-09-15 16:33:10.101  INFO 14568 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-09-15 16:33:10.112  INFO 14568 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-09-15 16:33:10.122 ERROR 14568 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.casino.rest.Application.main(Application.java:10) [classes/:na]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:179) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:119) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 16 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:94) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	... 33 common frames omitted
+
+2020-09-15 16:33:46.236  INFO 5220 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 5220 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 16:33:46.239  INFO 5220 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 16:33:47.075  INFO 5220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 16:33:47.156  INFO 5220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74ms. Found 4 repository interfaces.
+2020-09-15 16:33:47.439  INFO 5220 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2afe4397] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 16:33:47.670  INFO 5220 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 16:33:47.690  INFO 5220 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 16:33:47.691  INFO 5220 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 16:33:47.806  INFO 5220 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 16:33:47.972  INFO 5220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 16:33:49.034 ERROR 5220 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.get(DbException.java:194) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:193) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:173) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.getPageStore(Database.java:2739) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.open(Database.java:769) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.openDatabase(Database.java:319) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.<init>(Database.java:313) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:201) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:161) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:31) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.Driver.connect(Driver.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:319) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:356) [spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DatabaseLookup.getDatabase(DatabaseLookup.java:73) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.determineDatabase(JpaProperties.java:142) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.jpaVendorAdapter(JpaBaseConfiguration.java:113) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$49d50606.CGLIB$jpaVendorAdapter$4(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$49d50606$$FastClassBySpringCGLIB$$d0582d1.invoke(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$49d50606.jpaVendorAdapter(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_261]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_261]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_261]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_261]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.casino.rest.Application.main(Application.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/dholb/OneDrive/Escritorio/zitro/workspace/casino/db/basededatos.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.FileStore.open(FileStore.java:172) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162) ~[h2-1.4.199.jar:1.4.199]
+	... 87 common frames omitted
+
+2020-09-15 16:33:49.040  WARN 5220 --- [main] o.s.b.a.orm.jpa.DatabaseLookup           : Unable to determine jdbc url from datasource
+
+org.springframework.jdbc.support.MetaDataAccessException: Could not get Connection for extracting meta-data; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:328) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:356) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DatabaseLookup.getDatabase(DatabaseLookup.java:73) ~[spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.determineDatabase(JpaProperties.java:142) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.jpaVendorAdapter(JpaBaseConfiguration.java:113) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$49d50606.CGLIB$jpaVendorAdapter$4(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$49d50606$$FastClassBySpringCGLIB$$d0582d1.invoke(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$49d50606.jpaVendorAdapter(<generated>) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_261]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_261]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_261]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_261]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.casino.rest.Application.main(Application.java:10) ~[classes/:na]
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:319) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 62 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.get(DbException.java:194) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:193) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:173) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.getPageStore(Database.java:2739) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.open(Database.java:769) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.openDatabase(Database.java:319) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.<init>(Database.java:313) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:201) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:161) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:31) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.Driver.connect(Driver.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 63 common frames omitted
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/dholb/OneDrive/Escritorio/zitro/workspace/casino/db/basededatos.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.FileStore.open(FileStore.java:172) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162) ~[h2-1.4.199.jar:1.4.199]
+	... 87 common frames omitted
+
+2020-09-15 16:33:49.441  INFO 5220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 16:33:50.450 ERROR 5220 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: null. Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.get(DbException.java:194) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:193) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:173) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.getPageStore(Database.java:2739) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.open(Database.java:769) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.openDatabase(Database.java:319) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Database.<init>(Database.java:313) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.openSession(Engine.java:201) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:161) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.Engine.createSession(Engine.java:31) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.Driver.connect(Driver.java:69) ~[h2-1.4.199.jar:1.4.199]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:94) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:179) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:119) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) [hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.casino.rest.Application.main(Application.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/dholb/OneDrive/Escritorio/zitro/workspace/casino/db/basededatos.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.FileStore.open(FileStore.java:172) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162) ~[h2-1.4.199.jar:1.4.199]
+	... 60 common frames omitted
+
+2020-09-15 16:33:50.453  WARN 5220 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2020-09-15 16:33:50.457  INFO 5220 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-09-15 16:33:50.468  INFO 5220 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-09-15 16:33:50.474 ERROR 5220 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.casino.rest.Application.main(Application.java:10) [classes/:na]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:179) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:119) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 16 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:94) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.3.11.Final.jar:5.3.11.Final]
+	... 33 common frames omitted
+
+2020-09-15 16:50:55.596  INFO 15668 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 15668 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 16:50:55.601  INFO 15668 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 16:50:56.833  INFO 15668 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 16:50:56.928  INFO 15668 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85ms. Found 4 repository interfaces.
+2020-09-15 16:50:57.232  INFO 15668 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c93d7770] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 16:50:57.539  INFO 15668 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 16:50:57.569  INFO 15668 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 16:50:57.570  INFO 15668 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 16:50:57.706  INFO 15668 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 16:50:57.882  INFO 15668 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 16:50:58.039  INFO 15668 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 16:50:59.277  INFO 15668 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 16:50:59.916  WARN 15668 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 16:51:00.102  INFO 15668 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 16:51:00.275  INFO 15668 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 16:51:00.325  INFO 15668 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 16:51:00.469  INFO 15668 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 16:51:00.496  INFO 15668 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 16:51:00.530  INFO 15668 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 16:51:00.693  INFO 15668 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 16:51:00.738  INFO 15668 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 16:51:00.741  INFO 15668 --- [main] com.casino.rest.Application              : Started Application in 5.627 seconds (JVM running for 6.69)
+2020-09-15 16:51:36.431  INFO 15668 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 16:57:46.297  INFO 15668 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=NUEVO_JUGADOR, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 16:58:20.040  INFO 15668 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=119, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 16:58:42.419  INFO 15668 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 16:58:42.444  INFO 15668 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 16:58:48.792  INFO 15668 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 16:58:48.805  INFO 15668 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 16:58:50.639  INFO 15668 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 16:58:50.650  INFO 15668 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 16:58:52.912  INFO 15668 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 16:58:52.923  INFO 15668 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 16:59:17.106  INFO 15668 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 16:59:37.135  INFO 15668 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 16:59:37.145  INFO 15668 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 16:59:39.214  INFO 15668 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 16:59:39.227  INFO 15668 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 16:59:41.103  INFO 15668 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 16:59:41.115  INFO 15668 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:00:03.317  INFO 15668 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=120, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=RULETA)
+2020-09-15 17:00:10.135  INFO 15668 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=RULETA)
+2020-09-15 17:00:10.146  INFO 15668 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:00:53.013  INFO 15668 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=121, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=RULETA)
+2020-09-15 17:01:07.370  INFO 15668 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:01:18.055  INFO 15668 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=RULETA)
+2020-09-15 17:01:18.065  INFO 15668 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:01:20.279  INFO 15668 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=RULETA)
+2020-09-15 17:01:20.290  INFO 15668 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:07:19.316  INFO 15668 --- [RMI TCP Connection(26)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:07:19.319  INFO 15668 --- [RMI TCP Connection(26)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:07:19.321  INFO 15668 --- [RMI TCP Connection(26)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:07:19.323  INFO 15668 --- [RMI TCP Connection(26)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:07:19.540  INFO 15668 --- [RMI TCP Connection(26)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-15 17:07:25.946  INFO 10044 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 10044 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 17:07:25.949  INFO 10044 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 17:07:26.781  INFO 10044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 17:07:26.861  INFO 10044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72ms. Found 4 repository interfaces.
+2020-09-15 17:07:27.134  INFO 10044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4e928389] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 17:07:27.366  INFO 10044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 17:07:27.386  INFO 10044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 17:07:27.386  INFO 10044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 17:07:27.501  INFO 10044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 17:07:27.665  INFO 10044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 17:07:27.876  INFO 10044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 17:07:28.841  INFO 10044 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:07:29.382  WARN 10044 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 17:07:29.538  INFO 10044 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 17:07:29.676  INFO 10044 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:07:29.714  INFO 10044 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 17:07:29.832  INFO 10044 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 17:07:29.848  INFO 10044 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 17:07:29.876  INFO 10044 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 17:07:30.036  INFO 10044 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 17:07:30.074  INFO 10044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 17:07:30.076  INFO 10044 --- [main] com.casino.rest.Application              : Started Application in 4.461 seconds (JVM running for 5.332)
+2020-09-15 17:07:37.515  INFO 10044 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 17:09:17.692  INFO 10044 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=122, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:09:35.853  INFO 10044 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:09:41.443  INFO 10044 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:09:41.456  INFO 10044 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:09:44.921  INFO 10044 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:09:44.933  INFO 10044 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:09:46.294  INFO 10044 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:09:46.307  INFO 10044 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:09:49.122  INFO 10044 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:09:49.135  INFO 10044 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:11:03.083  INFO 10044 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:11:03.086  INFO 10044 --- [RMI TCP Connection(12)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:11:03.089  INFO 10044 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:11:03.091  INFO 10044 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:11:03.319  INFO 10044 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-15 17:11:09.554  INFO 15576 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 15576 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 17:11:09.557  INFO 15576 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 17:11:10.391  INFO 15576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 17:11:10.475  INFO 15576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77ms. Found 4 repository interfaces.
+2020-09-15 17:11:10.753  INFO 15576 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$782f4881] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 17:11:10.986  INFO 15576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 17:11:11.006  INFO 15576 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 17:11:11.006  INFO 15576 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 17:11:11.123  INFO 15576 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 17:11:11.282  INFO 15576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 17:11:11.466  INFO 15576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 17:11:12.422  INFO 15576 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:11:12.942  WARN 15576 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 17:11:13.116  INFO 15576 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 17:11:13.243  INFO 15576 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:11:13.278  INFO 15576 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 17:11:13.385  INFO 15576 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 17:11:13.401  INFO 15576 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 17:11:13.425  INFO 15576 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 17:11:13.555  INFO 15576 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 17:11:13.589  INFO 15576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 17:11:13.591  INFO 15576 --- [main] com.casino.rest.Application              : Started Application in 4.365 seconds (JVM running for 5.138)
+2020-09-15 17:11:26.491  INFO 15576 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 17:11:26.787  INFO 15576 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:11:31.447  INFO 15576 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:11:31.464  INFO 15576 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:11:32.368  INFO 15576 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:11:32.381  INFO 15576 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:11:34.265  INFO 15576 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:11:34.277  INFO 15576 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:13:48.202  INFO 15576 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:13:48.205  INFO 15576 --- [RMI TCP Connection(12)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:13:48.209  INFO 15576 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:13:48.211  INFO 15576 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:13:48.434  INFO 15576 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-15 17:13:54.718  INFO 1828 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 1828 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 17:13:54.721  INFO 1828 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 17:13:55.562  INFO 1828 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 17:13:55.646  INFO 1828 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75ms. Found 4 repository interfaces.
+2020-09-15 17:13:55.920  INFO 1828 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$67fde5d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 17:13:56.184  INFO 1828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 17:13:56.210  INFO 1828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 17:13:56.210  INFO 1828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 17:13:56.343  INFO 1828 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 17:13:56.519  INFO 1828 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 17:13:56.728  INFO 1828 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 17:13:57.700  INFO 1828 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:13:58.257  WARN 1828 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 17:13:58.410  INFO 1828 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 17:13:58.560  INFO 1828 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:13:58.600  INFO 1828 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 17:13:58.715  INFO 1828 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 17:13:58.731  INFO 1828 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 17:13:58.758  INFO 1828 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 17:13:58.919  INFO 1828 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 17:13:58.956  INFO 1828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 17:13:58.958  INFO 1828 --- [main] com.casino.rest.Application              : Started Application in 4.581 seconds (JVM running for 5.388)
+2020-09-15 17:14:44.579  INFO 1828 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 17:14:50.079  INFO 1828 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=123, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:14:58.419  INFO 1828 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:15:08.068  INFO 1828 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:15:08.083  INFO 1828 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:15:10.769  INFO 1828 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:15:10.789  INFO 1828 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:18:14.889  INFO 1828 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:18:14.893  INFO 1828 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:18:14.895  INFO 1828 --- [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:18:14.898  INFO 1828 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:18:15.119  INFO 1828 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-15 17:18:21.457  INFO 4592 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 4592 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 17:18:21.460  INFO 4592 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 17:18:22.287  INFO 4592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 17:18:22.368  INFO 4592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74ms. Found 4 repository interfaces.
+2020-09-15 17:18:22.646  INFO 4592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cd37226b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 17:18:22.877  INFO 4592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 17:18:22.897  INFO 4592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 17:18:22.897  INFO 4592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 17:18:23.012  INFO 4592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 17:18:23.171  INFO 4592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 17:18:23.377  INFO 4592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 17:18:24.409  INFO 4592 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:18:24.977  WARN 4592 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 17:18:25.137  INFO 4592 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 17:18:25.282  INFO 4592 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:18:25.322  INFO 4592 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 17:18:25.447  INFO 4592 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 17:18:25.465  INFO 4592 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 17:18:25.491  INFO 4592 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 17:18:25.652  INFO 4592 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 17:18:25.691  INFO 4592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 17:18:25.693  INFO 4592 --- [main] com.casino.rest.Application              : Started Application in 4.564 seconds (JVM running for 5.402)
+2020-09-15 17:18:40.695  INFO 4592 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 17:18:46.886  INFO 4592 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=124, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:18:53.669  INFO 4592 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:18:58.795  INFO 4592 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:18:58.810  INFO 4592 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:19:00.707  INFO 4592 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:19:00.723  INFO 4592 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:19:01.720  INFO 4592 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:19:01.734  INFO 4592 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:19:02.417  INFO 4592 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:19:02.431  INFO 4592 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:20:42.099  INFO 4592 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:20:42.102  INFO 4592 --- [RMI TCP Connection(12)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:20:42.105  INFO 4592 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:20:42.108  INFO 4592 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:20:42.148  INFO 4592 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-15 17:20:48.427  INFO 12808 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 12808 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 17:20:48.430  INFO 12808 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 17:20:49.282  INFO 12808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 17:20:49.367  INFO 12808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77ms. Found 4 repository interfaces.
+2020-09-15 17:20:49.643  INFO 12808 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5ec415f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 17:20:49.877  INFO 12808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 17:20:49.898  INFO 12808 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 17:20:49.898  INFO 12808 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 17:20:50.013  INFO 12808 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 17:20:50.180  INFO 12808 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 17:20:50.388  INFO 12808 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 17:20:51.358  INFO 12808 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:20:51.887  WARN 12808 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 17:20:52.038  INFO 12808 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 17:20:52.178  INFO 12808 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:20:52.217  INFO 12808 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 17:20:52.336  INFO 12808 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 17:20:52.357  INFO 12808 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 17:20:52.389  INFO 12808 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 17:20:52.550  INFO 12808 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 17:20:52.585  INFO 12808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 17:20:52.587  INFO 12808 --- [main] com.casino.rest.Application              : Started Application in 4.494 seconds (JVM running for 5.26)
+2020-09-15 17:20:58.831  INFO 12808 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 17:21:03.816  INFO 12808 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=125, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:21:12.165  INFO 12808 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:21:57.980  INFO 12808 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:21:57.995  INFO 12808 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:21:59.936  INFO 12808 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:21:59.948  INFO 12808 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:22:01.008  INFO 12808 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:22:01.022  INFO 12808 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:22:03.336  INFO 12808 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:22:03.348  INFO 12808 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:23:00.704  INFO 12808 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:23:00.707  INFO 12808 --- [RMI TCP Connection(10)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:23:00.710  INFO 12808 --- [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:23:00.713  INFO 12808 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:23:00.732  INFO 12808 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-15 17:23:06.996  INFO 15612 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 15612 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 17:23:07.000  INFO 15612 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 17:23:07.899  INFO 15612 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 17:23:07.979  INFO 15612 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74ms. Found 4 repository interfaces.
+2020-09-15 17:23:08.262  INFO 15612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a9f0fef3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 17:23:08.496  INFO 15612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 17:23:08.516  INFO 15612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 17:23:08.517  INFO 15612 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 17:23:08.627  INFO 15612 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 17:23:08.795  INFO 15612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 17:23:09.002  INFO 15612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 17:23:09.990  INFO 15612 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:23:10.555  WARN 15612 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 17:23:10.709  INFO 15612 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 17:23:10.850  INFO 15612 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:23:10.889  INFO 15612 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 17:23:11.007  INFO 15612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 17:23:11.023  INFO 15612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 17:23:11.049  INFO 15612 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 17:23:11.206  INFO 15612 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 17:23:11.244  INFO 15612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 17:23:11.245  INFO 15612 --- [main] com.casino.rest.Application              : Started Application in 4.577 seconds (JVM running for 5.384)
+2020-09-15 17:23:14.558  INFO 15612 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 17:23:18.705  INFO 15612 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=126, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:23:24.806  INFO 15612 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:23:30.133  INFO 15612 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:23:30.148  INFO 15612 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:23:31.504  INFO 15612 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:23:31.520  INFO 15612 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:23:32.408  INFO 15612 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:23:32.421  INFO 15612 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:23:34.080  INFO 15612 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:23:34.091  INFO 15612 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:24:33.138  INFO 15612 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:24:33.141  INFO 15612 --- [RMI TCP Connection(11)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:24:33.145  INFO 15612 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:24:33.148  INFO 15612 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:24:33.170  INFO 15612 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-15 17:24:39.448  INFO 5056 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 5056 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 17:24:39.451  INFO 5056 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 17:24:40.270  INFO 5056 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 17:24:40.358  INFO 5056 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81ms. Found 4 repository interfaces.
+2020-09-15 17:24:40.659  INFO 5056 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$765df2a9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 17:24:40.910  INFO 5056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 17:24:40.933  INFO 5056 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 17:24:40.934  INFO 5056 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 17:24:41.077  INFO 5056 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 17:24:41.252  INFO 5056 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 17:24:41.457  INFO 5056 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 17:24:42.412  INFO 5056 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:24:42.923  WARN 5056 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 17:24:43.066  INFO 5056 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 17:24:43.190  INFO 5056 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:24:43.226  INFO 5056 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 17:24:43.339  INFO 5056 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 17:24:43.357  INFO 5056 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 17:24:43.381  INFO 5056 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 17:24:43.510  INFO 5056 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 17:24:43.546  INFO 5056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 17:24:43.548  INFO 5056 --- [main] com.casino.rest.Application              : Started Application in 4.432 seconds (JVM running for 5.198)
+2020-09-15 17:24:55.493  INFO 5056 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 17:25:01.577  INFO 5056 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=127, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 17:25:08.972  INFO 5056 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:25:13.019  INFO 5056 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 17:25:13.034  INFO 5056 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:25:14.433  INFO 5056 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 17:25:14.450  INFO 5056 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:25:15.280  INFO 5056 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 17:25:15.293  INFO 5056 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:25:17.729  INFO 5056 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=BLACKJACK)
+2020-09-15 17:25:17.739  INFO 5056 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:26:23.941  INFO 5056 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=128, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=POKER)
+2020-09-15 17:26:33.542  INFO 5056 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:27:20.386  INFO 5056 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=POKER)
+2020-09-15 17:27:20.399  INFO 5056 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:27:21.855  INFO 5056 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=POKER)
+2020-09-15 17:27:21.868  INFO 5056 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:27:23.015  INFO 5056 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=POKER)
+2020-09-15 17:27:23.027  INFO 5056 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:27:24.263  INFO 5056 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=POKER)
+2020-09-15 17:27:24.275  INFO 5056 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:29:35.746  INFO 5056 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:29:35.749  INFO 5056 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:29:35.753  INFO 5056 --- [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:29:35.756  INFO 5056 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:29:35.794  INFO 5056 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-15 17:29:42.147  INFO 13204 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 13204 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 17:29:42.150  INFO 13204 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 17:29:42.954  INFO 13204 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 17:29:43.036  INFO 13204 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75ms. Found 4 repository interfaces.
+2020-09-15 17:29:43.338  INFO 13204 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$225ecc1d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 17:29:43.581  INFO 13204 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 17:29:43.604  INFO 13204 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 17:29:43.604  INFO 13204 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 17:29:43.753  INFO 13204 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 17:29:43.925  INFO 13204 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 17:29:44.130  INFO 13204 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 17:29:45.109  INFO 13204 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:29:45.636  WARN 13204 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 17:29:45.791  INFO 13204 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 17:29:45.944  INFO 13204 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:29:45.986  INFO 13204 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 17:29:46.101  INFO 13204 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 17:29:46.116  INFO 13204 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 17:29:46.140  INFO 13204 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 17:29:46.273  INFO 13204 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 17:29:46.310  INFO 13204 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 17:29:46.312  INFO 13204 --- [main] com.casino.rest.Application              : Started Application in 4.495 seconds (JVM running for 5.279)
+2020-09-15 17:29:54.843  INFO 13204 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 17:30:04.469  INFO 13204 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=129, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:30:12.293  INFO 13204 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:30:16.146  INFO 13204 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:30:16.160  INFO 13204 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:30:18.280  INFO 13204 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:30:18.292  INFO 13204 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:30:19.480  INFO 13204 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:30:19.493  INFO 13204 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:31:26.594  INFO 13204 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:31:26.596  INFO 13204 --- [RMI TCP Connection(11)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:31:26.599  INFO 13204 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:31:26.602  INFO 13204 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:31:26.618  INFO 13204 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-15 17:31:32.934  INFO 13292 --- [main] com.casino.rest.Application              : Starting Application on DESKTOP-SR5E70D with PID 13292 (C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino\target\classes started by dholb in C:\Users\dholb\OneDrive\Escritorio\zitro\workspace\casino)
+2020-09-15 17:31:32.938  INFO 13292 --- [main] com.casino.rest.Application              : No active profile set, falling back to default profiles: default
+2020-09-15 17:31:33.764  INFO 13292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-15 17:31:33.841  INFO 13292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71ms. Found 4 repository interfaces.
+2020-09-15 17:31:34.115  INFO 13292 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e6b9fa58] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-15 17:31:34.351  INFO 13292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-15 17:31:34.372  INFO 13292 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-15 17:31:34.372  INFO 13292 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-09-15 17:31:34.488  INFO 13292 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-15 17:31:34.650  INFO 13292 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-15 17:31:34.879  INFO 13292 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-15 17:31:35.933  INFO 13292 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:31:36.460  WARN 13292 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-15 17:31:36.609  INFO 13292 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-15 17:31:36.750  INFO 13292 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:31:36.790  INFO 13292 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-09-15 17:31:36.909  INFO 13292 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-15 17:31:36.925  INFO 13292 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-15 17:31:36.951  INFO 13292 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-15 17:31:37.107  INFO 13292 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2020-09-15 17:31:37.144  INFO 13292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-15 17:31:37.147  INFO 13292 --- [main] com.casino.rest.Application              : Started Application in 4.536 seconds (JVM running for 5.315)
+2020-09-15 17:31:41.045  INFO 13292 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-15 17:31:45.300  INFO 13292 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=130, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=VIDEO-BINGO)
+2020-09-15 17:32:11.787  INFO 13292 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:32:13.955  INFO 13292 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=VIDEO-BINGO)
+2020-09-15 17:32:13.969  INFO 13292 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:32:15.663  INFO 13292 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=VIDEO-BINGO)
+2020-09-15 17:32:15.678  INFO 13292 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:32:33.564  INFO 13292 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:32:33.857  INFO 13292 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:32:37.440  INFO 13292 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=VIDEO-BINGO)
+2020-09-15 17:32:37.451  INFO 13292 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:32:53.637  INFO 13292 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=PARTIDA, idPartida=131, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:33:13.461  INFO 13292 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=CARGAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:33:16.025  INFO 13292 --- [http-nio-8081-exec-5] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:33:16.038  INFO 13292 --- [http-nio-8081-exec-6] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:33:17.415  INFO 13292 --- [http-nio-8081-exec-7] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:33:17.426  INFO 13292 --- [http-nio-8081-exec-10] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:33:18.599  INFO 13292 --- [http-nio-8081-exec-8] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:33:18.611  INFO 13292 --- [http-nio-8081-exec-9] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:33:19.664  INFO 13292 --- [http-nio-8081-exec-1] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:33:19.676  INFO 13292 --- [http-nio-8081-exec-3] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:33:20.406  INFO 13292 --- [http-nio-8081-exec-2] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=JUGADA, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=null, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=SLOT)
+2020-09-15 17:33:20.419  INFO 13292 --- [http-nio-8081-exec-4] com.casino.rest.service.EventoService    : EventoDto(id=null, nombre=MODIFICAR_SALDO, idPartida=null, idJugador=75, fechaCreacion=null, apuesta=0.0, token=2d262e7b-29cc-4f14-b77e-3754d32787b2, nombreJuego=null)
+2020-09-15 17:45:30.524  INFO 13292 --- [RMI TCP Connection(23)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-09-15 17:45:30.527  INFO 13292 --- [RMI TCP Connection(23)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-15 17:45:30.529  INFO 13292 --- [RMI TCP Connection(23)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-15 17:45:30.532  INFO 13292 --- [RMI TCP Connection(23)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-15 17:45:30.571  INFO 13292 --- [RMI TCP Connection(23)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

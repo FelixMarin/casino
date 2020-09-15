@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="casino">
+<meta name="author" content="Felix Marin Ramirez">
+
+<title>Juego</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<!-- Custom styles for this template -->
+<link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1 id="titulo-juego"></h1>
+				<h6 id="user-name"></h6>
+				<hr />
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Tipo</th>
+							<th>Premio</th>
+							<th>Apuesta M&aacute;xima</th>
+							<th>Apuesta M&iacute;nima</th>
+							<th>Tiempo Permitido</th>
+						</tr>
+					</thead>
+					<tbody id="productos-table-body">
+					</tbody>
+				</table>
+				<hr />
+				<button type="button" class="btn btn-primary" onclick="comenzarPartida();">Jugar</button>
+				<button type="button" class="btn btn-secondary"
+					onclick="window.location.href='http://localhost:8081/list.html';">Volver</button>
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="juego.js"></script>
+</body>
+</html>
