@@ -42,4 +42,4 @@ http://localhost:8081/login.html
 usuario: user1 
 password: User1 
 ```
-Será redirigido, con la sesión ya iniciada, a la página del casino
+4. Será redirigido, con la sesión ya iniciada, a la página del casino
