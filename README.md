@@ -15,6 +15,8 @@ El servidor de autenticación está implementado con Spring Security con OAuth p
 
 A continuación, se muestra el diagrama correspondiente a la capa de modelo, detallando las entidades que conforman la aplicación, separadas por proyecto. El cuadro de la izquierda, marcado en azul, agrupa las entidades del servidor de autenticación y el de la derecha, las pertenecientes al casino. 
 
+![diagrama de entidades](https://github.com/FelixMarin/casino/blob/develop/casino/src/main/resources/img/DIAGRAMA_BBDD.png)
+
 ## Herramientas utilizadas:   
 
 - Framework: Spring Tools Suite 4 (en adelante STS)  
@@ -40,4 +42,6 @@ http://localhost:8081/login.html
 usuario: user1 
 password: User1 
 ```
-Será redirigido, con la sesión ya iniciada, a la página del casino
+4. Será redirigido, con la sesión ya iniciada, a la página del casino
+
+#### Ejemplo en [vídeo](https://youtu.be/3UWYXxYCQew)
