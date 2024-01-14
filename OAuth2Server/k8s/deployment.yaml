@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: salix-social-engine-ai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: salix-social-engine-ai
+  template:
+    metadata:
+      labels:
+        app: salix-social-engine-ai
+    spec:
+      containers:
+        - name: salix-social-engine
+          image: felixmurcia/salix-social-engine-ai:latest
+          resources:
+            limits:
+              memory: "2Gi"
+          ports:
+            - containerPort: 8080
