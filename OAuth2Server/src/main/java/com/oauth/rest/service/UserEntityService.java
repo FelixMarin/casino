@@ -1,8 +1,7 @@
 package com.oauth.rest.service;
 
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.Set;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -16,46 +15,41 @@ import com.oauth.rest.model.UserEntity;
 import com.oauth.rest.model.UserRole;
 import com.oauth.rest.repository.UserEntityRepository;
 
-import lombok.RequiredArgsConstructor;
-
 @Service
-@RequiredArgsConstructor
 public class UserEntityService extends BaseService<UserEntity, Long, UserEntityRepository> {
 
-	private final PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
-	/**
-	 * Nos permite buscar un usuario por su nombre de usuario
-	 * 
-	 * @param username
-	 * @return
-	 */
-	public Optional<UserEntity> findUserByUsername(String username) {
-		return this.repositorio.findByUsername(username);
-	}
+    public UserEntityService(UserEntityRepository repository,
+                             PasswordEncoder passwordEncoder) {
+        super(repository);
+        this.passwordEncoder = passwordEncoder;
+    }
 
-	/**
-	 * Nos permite crear un nuevo UserEntity con rol USER
-	 * 
-	 * @param newUser
-	 * @return
-	 */
-	public UserEntity nuevoUsuario(CreateUserDto newUser) {
+    public Optional<UserEntity> findUserByUsername(String username) {
+        return this.repository.findByUsername(username);
+    }
 
-		if (newUser.getPassword().contentEquals(newUser.getPassword2())) {
-			UserEntity userEntity = UserEntity.builder().username(newUser.getUsername())
-					.password(passwordEncoder.encode(newUser.getPassword())).avatar(newUser.getAvatar())
-					.fullName(newUser.getFullname()).email(newUser.getEmail())
-					.roles(Stream.of(UserRole.USER).collect(Collectors.toSet())).build();
-			try {
-				return save(userEntity);
-			} catch (DataIntegrityViolationException ex) {
-				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "El nombre de usuario ya existe");
-			}
-		} else {
-			throw new UserPasswordException();
-		}
+    public UserEntity nuevoUsuario(CreateUserDto newUser) {
 
-	}
+        if (!newUser.getPassword().equals(newUser.getPassword2())) {
+            throw new UserPasswordException();
+        }
 
+        UserEntity user = new UserEntity();
+        user.setUsername(newUser.getUsername());
+        user.setFullName(newUser.getFullName());
+        user.setEmail(newUser.getEmail());
+        user.setPassword(passwordEncoder.encode(newUser.getPassword()));
+        user.setRoles(Set.of(UserRole.USER));
+
+        try {
+            return save(user);
+        } catch (DataIntegrityViolationException ex) {
+            throw new ResponseStatusException(
+                HttpStatus.BAD_REQUEST,
+                "El nombre de usuario ya existe"
+            );
+        }
+    }
 }

@@ -22,95 +22,141 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 @Entity
-@Table(name="usuarios")
+@Table(name = "usuarios")
 @EntityListeners(AuditingEntityListener.class)
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class UserEntity implements UserDetails {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6189678452627071360L;
+    private static final long serialVersionUID = 6189678452627071360L;
 
-	@Id
-	@GeneratedValue
-	private Long id;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-	@Column(unique = true)
-	private String username;
+    @Column(unique = true, nullable = false)
+    private String username;
 
-	private String password;
+    @Column(nullable = false)
+    private String password;
 
-	private String avatar;
-	
-	private String fullName;
-	
-	private String email;
-	
-	private String proveedor;
-	
-	private Double saldo;
+    private String fullName;
 
-	@ElementCollection(fetch = FetchType.EAGER)
-	@Enumerated(EnumType.STRING)
-	private Set<UserRole> roles;
+    private String email;
 
-	@CreatedDate
-	private LocalDateTime createdAt;
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
+    private Set<UserRole> roles;
 
-	@Builder.Default
-	private LocalDateTime lastPasswordChangeAt = LocalDateTime.now();
+    @CreatedDate
+    private LocalDateTime createdAt;
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return roles.stream().map(ur -> new SimpleGrantedAuthority("ROLE_" + ur.name())).collect(Collectors.toList());
-	}
+    private LocalDateTime lastPasswordChangeAt = LocalDateTime.now();
 
-	/**
-	 * No vamos a gestionar la expiración de cuentas. De hacerse, se tendría que dar
-	 * cuerpo a este método
-	 */
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
-	}
+    public UserEntity() {
+    }
 
-	/**
-	 * No vamos a gestionar el bloqueo de cuentas. De hacerse, se tendría que dar
-	 * cuerpo a este método
-	 */
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
-	}
+    public UserEntity(Long id, String username, String password, String fullName, String email,
+                      Set<UserRole> roles, LocalDateTime createdAt, LocalDateTime lastPasswordChangeAt) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.fullName = fullName;
+        this.email = email;
+        this.roles = roles;
+        this.createdAt = createdAt;
+        this.lastPasswordChangeAt = lastPasswordChangeAt;
+    }
 
-	/**
-	 * No vamos a gestionar la expiración de cuentas. De hacerse, se tendría que dar
-	 * cuerpo a este método
-	 */
+    // Getters y setters
 
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return true;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	
-	/**
-	 * No vamos a gestionar el bloqueo de cuentas. De hacerse, se tendría que dar
-	 * cuerpo a este método
-	 */	
-	@Override
-	public boolean isEnabled() {
-		return true;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Set<UserRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<UserRole> roles) {
+        this.roles = roles;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getLastPasswordChangeAt() {
+        return lastPasswordChangeAt;
+    }
+
+    public void setLastPasswordChangeAt(LocalDateTime lastPasswordChangeAt) {
+        this.lastPasswordChangeAt = lastPasswordChangeAt;
+    }
+
+    // Spring Security
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles.stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.name()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }

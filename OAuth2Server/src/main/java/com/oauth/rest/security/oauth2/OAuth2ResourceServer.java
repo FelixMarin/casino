@@ -6,48 +6,41 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
-import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
 @Configuration
 @EnableResourceServer
 public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
 
     @Override
-    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId("oauth2-resource");
-    }
-
-    @Override
     public void configure(HttpSecurity http) throws Exception {
 
         http
-            .csrf().disable()
-            .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and()
-            .authorizeRequests()
+                .csrf().disable()
+                .sessionManagement()
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .authorizeRequests()
 
-                // 🔓 RUTAS PÚBLICAS (sin token)
-                .antMatchers(
-                        "/h2-console/**",
-                        "/swagger-ui.html",
-                        "/swagger-ui/**",
-                        "/v2/api-docs",
-                        "/swagger-resources/**",
-                        "/webjars/**",
-                        "/login.html",
-                        "/oauth/token"
-                ).permitAll()
+                    // H2 solo en dev
+                    .antMatchers("/h2-console/**").permitAll()
 
-                // 🔐 RUTAS PROTEGIDAS
-                .antMatchers(HttpMethod.GET, "/producto/**", "/lote/**").hasRole("USER")
-                .antMatchers(HttpMethod.POST, "/producto/**", "/lote/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "/producto/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.DELETE, "/producto/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.POST, "/pedido/**").hasAnyRole("USER","ADMIN")
+                    // Swagger solo ADMIN
+                    .antMatchers(
+                            "/swagger-ui.html",
+                            "/swagger-ui/**",
+                            "/v2/api-docs",
+                            "/swagger-resources/**",
+                            "/webjars/**"
+                    ).hasRole("ADMIN")
 
-                .anyRequest().authenticated()
-            .and()
-                .headers().frameOptions().disable(); // Necesario para H2
+                    // Endpoints de usuario
+                    .antMatchers(HttpMethod.POST, "/user").permitAll()   // registro
+                    .antMatchers(HttpMethod.GET, "/user/me").authenticated()
+
+                    // Cualquier otra ruta
+                    .anyRequest().authenticated()
+
+                .and()
+                .headers().frameOptions().disable();
     }
 }

@@ -1,22 +1,43 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: salix-social-engine-ai
+  name: oauth2-server
+  namespace: auth
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: salix-social-engine-ai
+      app: oauth2-server
   template:
     metadata:
       labels:
-        app: salix-social-engine-ai
+        app: oauth2-server
     spec:
       containers:
-        - name: salix-social-engine
-          image: felixmurcia/salix-social-engine-ai:latest
-          resources:
-            limits:
-              memory: "2Gi"
+        - name: oauth2-server
+          image: oauth2-server:latest
+          
+          # Ejecuta tu script de producción dentro del contenedor
+          command: ["/bin/sh", "-c", "/app/run-prod.sh"]
+
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+
+            - name: JWT_SIGNING_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: oauth2-secrets
+                  key: jwt-signing-key
+
           ports:
             - containerPort: 8080
+
+          volumeMounts:
+            - name: oauth2-data
+              mountPath: /data
+
+      volumes:
+        - name: oauth2-data
+          persistentVolumeClaim:
+            claimName: oauth2-pvc

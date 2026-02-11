@@ -9,30 +9,31 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.oauth.rest.dto.CreateUserDto;
 import com.oauth.rest.dto.GetUserDto;
-import com.oauth.rest.dto.UserDtoConverter;
+import com.oauth.rest.mapper.UserDtoMapper;
 import com.oauth.rest.model.UserEntity;
 import com.oauth.rest.service.UserEntityService;
 
-import lombok.RequiredArgsConstructor;
-
 @RestController
 @RequestMapping("/user")
-@RequiredArgsConstructor
-public class UserController { 
-	
-	private final UserEntityService userEntityService;
-	private final UserDtoConverter userDtoConverter;
-	
-	
-	@PostMapping("/")
-	public GetUserDto nuevoUsuario(@RequestBody CreateUserDto newUser) {
-			return userDtoConverter.convertUserEntityToGetUserDto(userEntityService.nuevoUsuario(newUser));
+public class UserController {
 
-	}
-	
-	@GetMapping("/me")
-	public GetUserDto me(@AuthenticationPrincipal UserEntity theUser) {
-		return userDtoConverter.convertUserEntityToGetUserDto(theUser);
-	}
+    private final UserEntityService userEntityService;
+    private final UserDtoMapper userDtoMapper;
 
+    public UserController(UserEntityService userEntityService,
+                          UserDtoMapper userDtoMapper) {
+        this.userEntityService = userEntityService;
+        this.userDtoMapper = userDtoMapper;
+    }
+
+    @PostMapping
+    public GetUserDto nuevoUsuario(@RequestBody CreateUserDto newUser) {
+        UserEntity created = userEntityService.nuevoUsuario(newUser);
+        return userDtoMapper.toGetUserDto(created);
+    }
+
+    @GetMapping("/me")
+    public GetUserDto me(@AuthenticationPrincipal UserEntity authenticatedUser) {
+        return userDtoMapper.toGetUserDto(authenticatedUser);
+    }
 }

@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  oauth2-server:
+    image: oauth2-server:latest
+    container_name: oauth2server-dev
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    volumes:
+      - ./data:/data

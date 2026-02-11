@@ -13,46 +13,48 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import lombok.RequiredArgsConstructor;
-
 @Configuration
 @EnableWebSecurity
 @Order(1)
-@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	private final PasswordEncoder passwordEncoder;
-	private final UserDetailsService userDetailsService;
-	
-	
+    private final PasswordEncoder passwordEncoder;
+    private final UserDetailsService userDetailsService;
+
+    public SecurityConfig(PasswordEncoder passwordEncoder,
+                          UserDetailsService userDetailsService) {
+        this.passwordEncoder = passwordEncoder;
+        this.userDetailsService = userDetailsService;
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
         http
-          .cors().and().csrf().disable()
-          .requestMatchers()
-          .antMatchers("/login", "/oauth/authorize")
-          .and()
-          .authorizeRequests()
-          .antMatchers(HttpMethod.OPTIONS, "/oauth/**").permitAll()
-          .anyRequest().authenticated()
-          .and()
-          .formLogin().permitAll();
+            .cors()
+            .and()
+            .csrf().disable()
+            .requestMatchers()
+                .antMatchers("/login", "/oauth/authorize")
+            .and()
+            .authorizeRequests()
+                .antMatchers(HttpMethod.OPTIONS, "/oauth/**").permitAll()
+                .anyRequest().authenticated()
+            .and()
+            .formLogin()
+                .permitAll();
     }
- 
+
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {    	
-    	auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
-    	
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+            .userDetailsService(userDetailsService)
+            .passwordEncoder(passwordEncoder);
     }
 
     @Bean(BeanIds.AUTHENTICATION_MANAGER)
     @Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
-	}
-    
-    
-
-
-	
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
 }

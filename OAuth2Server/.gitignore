@@ -33,3 +33,7 @@ build/
 .vscode/
 *.txt
 git
+
+### Data ###
+data/*
+k8s/secrets.yaml
