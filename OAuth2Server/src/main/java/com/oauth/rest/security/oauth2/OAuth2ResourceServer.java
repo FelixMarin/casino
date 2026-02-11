@@ -12,33 +12,42 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 @EnableResourceServer
 public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
 
-	@Override
-	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-		
-		resources.resourceId("oauth2-resource");
-		
-	}
+    @Override
+    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+        resources.resourceId("oauth2-resource");
+    }
 
-	@Override
-	public void configure(HttpSecurity http) throws Exception {
+    @Override
+    public void configure(HttpSecurity http) throws Exception {
 
-		http
-		.csrf()
-			.disable()
-		.sessionManagement()
-			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and()
-		.authorizeRequests()
-			.antMatchers(HttpMethod.GET, "/producto/**", "/lote/**").hasRole("USER")
-			.antMatchers(HttpMethod.POST, "/producto/**", "/lote/**").hasRole("ADMIN")
-			.antMatchers(HttpMethod.PUT, "/producto/**").hasRole("ADMIN")
-			.antMatchers(HttpMethod.DELETE, "/producto/**").hasRole("ADMIN")
-			.antMatchers(HttpMethod.POST, "/pedido/**").hasAnyRole("USER","ADMIN")
-			.anyRequest().authenticated();
+        http
+            .csrf().disable()
+            .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
+            .authorizeRequests()
 
-	
-	}
+                // 🔓 RUTAS PÚBLICAS (sin token)
+                .antMatchers(
+                        "/h2-console/**",
+                        "/swagger-ui.html",
+                        "/swagger-ui/**",
+                        "/v2/api-docs",
+                        "/swagger-resources/**",
+                        "/webjars/**",
+                        "/login.html",
+                        "/oauth/token"
+                ).permitAll()
 
-	
-	
+                // 🔐 RUTAS PROTEGIDAS
+                .antMatchers(HttpMethod.GET, "/producto/**", "/lote/**").hasRole("USER")
+                .antMatchers(HttpMethod.POST, "/producto/**", "/lote/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/producto/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/producto/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/pedido/**").hasAnyRole("USER","ADMIN")
+
+                .anyRequest().authenticated()
+            .and()
+                .headers().frameOptions().disable(); // Necesario para H2
+    }
 }
