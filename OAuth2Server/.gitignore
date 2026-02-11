@@ -35,5 +35,6 @@ build/
 git
 
 ### Data ###
-data/*
+data/oauth2db.mv.db
 k8s/secrets.yaml
+src/main/resources/data.sql
