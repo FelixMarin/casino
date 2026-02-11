@@ -10,7 +10,5 @@ fi
 
 export SPRING_PROFILES_ACTIVE=prod
 
-mkdir -p /data
-
-# ARRANQUE CORRECTO
-java -jar /app/app.jar >> /data/oauth2server.log 2>&1
+# ARRANQUE CORRECTO (sin redirección a /data)
+java -jar /app/app.jar
