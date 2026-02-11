@@ -37,4 +37,6 @@ git
 ### Data ###
 data/oauth2db.mv.db
 k8s/secrets.yaml
-src/main/resources/data.sql
+
+# Flyway
+src/main/resources/db/migration/*

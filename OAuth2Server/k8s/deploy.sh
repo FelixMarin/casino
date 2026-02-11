@@ -25,24 +25,28 @@ echo "======================================"
 docker push $FULL_IMAGE
 
 echo "======================================"
-echo "  📝 Actualizando Deployment en Kubernetes"
+echo "  📝 Actualizando deployment.yaml con la nueva imagen"
 echo "======================================"
 
-kubectl set image deployment/$DEPLOYMENT \
-  $CONTAINER_NAME=$FULL_IMAGE \
-  -n $NAMESPACE
+# Sustituye la línea de imagen en TU YAML
+sed -i "s|image: .*|image: $FULL_IMAGE|" k8s/deployment.yaml
 
 echo "======================================"
-echo "  🔄 Forzando rollout"
+echo "  📦 Aplicando manifests"
 echo "======================================"
 
-kubectl rollout restart deployment/$DEPLOYMENT -n $NAMESPACE
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/secrets.yaml
+kubectl apply -f k8s/pvc.yaml
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+kubectl apply -f k8s/ingress.yaml
 
 echo "======================================"
-echo "  ⏳ Esperando a que el nuevo pod esté listo"
+echo "  🔄 Reiniciando pod"
 echo "======================================"
 
-kubectl rollout status deployment/$DEPLOYMENT -n $NAMESPACE
+kubectl delete pod -n $NAMESPACE -l app=$DEPLOYMENT --ignore-not-found=true
 
 echo "======================================"
 echo "  🧹 Eliminando imágenes antiguas de oauth2server"

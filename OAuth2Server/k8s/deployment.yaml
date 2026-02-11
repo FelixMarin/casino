@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: oauth2-server
-          image: oauth2-server:latest
+          image: felixmurcia/oauth2server:v20260211-1751
           
           # Ejecuta tu script de producción dentro del contenedor
           command: ["/bin/sh", "-c", "/app/run-prod.sh"]
@@ -42,18 +42,12 @@ spec:
                   name: oauth2-secrets
                   key: oauth-client-secret
 
-            - name: OAUTH_CLIENT_REDIRECT_URI
+            - name: OAUTH_REDIRECT_URI
               valueFrom:
                 secretKeyRef:
                   name: oauth2-secrets
-                  key: oauth-client-redirect-uri
+                  key: oauth-redirect-uri
 
-
-            - name: JWT_SIGNING_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: oauth2-secrets
-                  key: jwt-signing-key
 
           ports:
             - containerPort: 8080
