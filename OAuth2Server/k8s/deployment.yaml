@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: oauth2-server
-          image: felixmurcia/oauth2server:v20260211-1751
+          image: felixmurcia/oauth2server:v20260211-2038
           
           # Ejecuta tu script de producción dentro del contenedor
           command: ["/bin/sh", "-c", "/app/run-prod.sh"]
